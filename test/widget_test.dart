@@ -19,7 +19,7 @@ void main() {
     });
     await tester.pumpAndSettle();
 
-    expect(find.text('Paste a YouTube link…'), findsOneWidget);
+    expect(find.text('Paste a YouTube video or Shorts link…'), findsOneWidget);
     expect(find.text('Fetch'), findsOneWidget);
   });
 }

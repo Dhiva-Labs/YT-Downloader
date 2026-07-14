@@ -275,7 +275,7 @@ class _HomePageState extends State<HomePage> {
             controller: _urlController,
             enabled: !_fetching,
             decoration: InputDecoration(
-              hintText: 'Paste a YouTube link…',
+              hintText: 'Paste a YouTube video or Shorts link…',
               prefixIcon: const Icon(Icons.link),
               suffixIcon: IconButton(
                 tooltip: 'Paste from clipboard',
@@ -504,7 +504,7 @@ class _HomePageState extends State<HomePage> {
           Icon(Icons.smart_display_outlined,
               size: 72, color: theme.colorScheme.outline),
           const SizedBox(height: 16),
-          Text('Paste a YouTube link to get started',
+          Text('Paste a YouTube video or Shorts link to get started',
               style: theme.textTheme.titleMedium),
           const SizedBox(height: 8),
           Text(

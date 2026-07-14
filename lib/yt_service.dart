@@ -71,8 +71,19 @@ class YtService {
 
   Future<bool> get ffmpegAvailable => _ffmpeg.available;
 
+  /// Rewrites Shorts/live share links (which often carry `?si=` tracking
+  /// params the upstream parser chokes on) into plain watch URLs.
+  static String normalizeUrl(String url) {
+    final match = RegExp(r'youtube\.[^/\s]+/(?:shorts|live)/([A-Za-z0-9_-]{6,})')
+        .firstMatch(url);
+    if (match != null) {
+      return 'https://www.youtube.com/watch?v=${match.group(1)}';
+    }
+    return url;
+  }
+
   Future<FetchResult> fetchInfo(String url) async {
-    final video = await _yt.videos.get(url);
+    final video = await _yt.videos.get(normalizeUrl(url));
     final manifest =
         await _yt.videos.streamsClient.getManifest(video.id, ytClients: [
       YoutubeApiClient.androidVr,

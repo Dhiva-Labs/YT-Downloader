@@ -16,6 +16,8 @@ Cross-platform Flutter app by **DhivaLabs** to download YouTube videos as
 ## Features
 
 - 🔗 Paste a YouTube link → fetch title, thumbnail, channel, and duration
+- 📱 **Shorts / reels supported** — paste any `youtube.com/shorts/…` share
+  link (tracking params and all); `/live/` replay links work too
 - 🎬 **Video mode** — pick from all available qualities (MP4 / WebM),
   including 1080p+ (video-only stream merged with best audio)
 - 🎵 **Audio mode** — MP3 (320/192/128 kbps), M4A, or WebM-Opus
